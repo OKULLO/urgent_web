@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145011764-1"></script> -->
+   <!--  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-145011764-1');
+    </script> -->
+    <meta charset="UTF-8">
+    <title>Emergency alert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link href="/static/img/logo.png" rel="icon"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+    <link href="/static/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
+
+    <meta name="description" content="Urgent alert- analyse crime related text with nlp">
+    <meta name="author" content="Okullo Gilbert">
+    {% if "dashboard" in request.path %}
+        <link href="/static/maps.css" rel="stylesheet">
+    {% endif %}
+</head>
+
+<body>
+
+<div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            {% include 'includes/_navbar.html' %}
+            {% include 'includes/_messages.html' %}
+            {% block body %}{% endblock %}
+        </div>
+        <!-- FOOTER -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 border-bottom" style="margin-bottom: 10px; margin-top: -10px;"></div>
+        <footer class="container-fluid bg-theme" >
+            <p class="float-right py-2 text-white"><a href="#">Back to top</a></p>
+            <div class="text-center py-2 text-white">
+                <p>&copy; 2021 Urgent alert &middot;
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="" crossorigin="anonymous"></script>
+<script src="/static/includes/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="/static/includes/_messages.js" ></script>
+<script src="/static/includes/recording.js" ></script>
+<script src="/static/includes/simulation.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" ></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ googlemaps_key }}&callback=initMap&language=en"></script>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+{%  extends 'layout.html' %}
+
+{%  block body %}
+    {% if error != NULL %}
+        {{ flash("Oops! You haven't been registered. Please check your information.", 'danger')  }}
+    {% endif %}
+
+    <title>Register</title>
+
+    <body class="text-center">
+    <link href="/static/register.css" rel="stylesheet">
+
+        <img class="logo" src="/static/img/logo.png" alt="Aster logo", width="10%" height="10%">
+        <h1 class="cover-heading">Register</h1>
+        <p>Please complete the information below to register.</p>
+{#        {%  from 'includes/_formhelpers.html' import render_field %}#}
+        <form class="form-register" method="POST" action="">
+            <div class="form-group row">
+                <label for="inputFirstName" class="col-sm-2 col-form-label">First name:</label>
+                <div class="col-auto">
+                    <input type="text" id="inputFirstName" name="first_name" class="form-control" aria-describedby="nameHelpInline" placeholder="First name" value="{{ request.form.first_name }}">
+                </div>
+{#                <small id="nameHelpInline" class="form-text text-muted">#}
+{#                    Must be 8-20 characters long.#}
+{#                </small>#}
+            </div>
+            <div class="form-group row">
+                <label for="inputLastName" class="col-sm-2 col-form-label">Last name:</label>
+                <div class="col-auto">
+                    <input type="text" id="inputLastName" name="last_name" class="form-control" aria-describedby="nameHelpInline" placeholder="Last name" value="{{ request.form.last_name }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email:</label>
+                <div class="col-auto">
+                    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" value="{{ request.form.email }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputUsername" class="col-sm-2 col-form-label">Username:</label>
+                <div class="col-auto">
+                    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" value="{{ request.form.username }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
+                <div class="col-auto">
+                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" value="{{ request.form.password }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputConfirm" class="col-sm-2 col-form-label">Confirm:</label>
+                <div class="col-auto">
+                    <input type="password" id="inputConfirm" name="confirm" class="form-control" placeholder="Confirm password" value="{{ request.form.confirm }}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </form>
+    </body>
+
+{% endblock %}

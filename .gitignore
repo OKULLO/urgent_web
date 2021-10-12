@@ -1,0 +1,12 @@
+
+
+# Sensitive materials
+.env/*
+
+# Compiled package
+__pycache__/
+
+
+# Virtual environment components
+env/
+
